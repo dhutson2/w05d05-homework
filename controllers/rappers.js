@@ -31,8 +31,17 @@ router.post('/', (req, res) => {
             res.redirect('/rappers')
         }
     })
-
     })
+
+router.get('/:id', (req,res) =>{
+    // res.send('here is id page')
+    Rapper.findById(req.params.id, (err, foundRapper) => {
+        console.log(req.params.id)
+        res.render('rappers/show.ejs', {
+            rappers: foundRapper
+    })
+    })
+})
 
 module.exports = router;
 
