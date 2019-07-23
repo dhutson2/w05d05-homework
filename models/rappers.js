@@ -3,8 +3,6 @@ const mongoose = require('mongoose');
 // schema
 const rapperSchema = new mongoose.Schema({
   name: String,
-  from: String,
-  message: [String]
 });
 
 //.model() is a method it returns a model object

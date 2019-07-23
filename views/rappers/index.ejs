@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1>Rappers</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/rappers/new">Add a new rapper</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>List of Rappers</h2>
+      <ul>
+          <% for(let i = 0; i < rappers.length; i++){ %>
+              <li>
+                  <a href="/rappers/<%=rappers[i]._id%>"><%=rappers[i].name%></a>
+                  <a href="/rappers/<%=rappers[i]._id%>"><%=rappers[i].from%></a>
+                  <a href="/rappers/<%=rappers[i]._id%>"><%=rappers[i].songs%></a>
+              </li>
+          <% } %>
+      </ul>
+
+    </main>
+  </body>
+</html>

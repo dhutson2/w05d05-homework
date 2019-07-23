@@ -5,7 +5,7 @@ const app = express()
 
 require('./db/db')
 
-const rappersController = require('./models/rappers')
+const rappersController = require('./controllers/rappers')
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
