@@ -26,6 +26,9 @@
                   <a href="/rappers/<%=rappers[i]._id%>"><%=rappers[i].name%></a>
                   <a href="/rappers/<%=rappers[i]._id%>"><%=rappers[i].from%></a>
                   <a href="/rappers/<%=rappers[i]._id%>"><%=rappers[i].songs%></a>
+                  <form method="POST" action="/rappers/<%=rappers[i]._id%>?_method=DELETE">
+                <input type="submit" name="_method" value="DELETE"/>
+            </form>
               </li>
           <% } %>
       </ul>

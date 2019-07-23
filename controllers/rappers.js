@@ -36,10 +36,22 @@ router.post('/', (req, res) => {
 router.get('/:id', (req,res) =>{
     // res.send('here is id page')
     Rapper.findById(req.params.id, (err, foundRapper) => {
-        console.log(req.params.id)
+        // console.log(req.params.id)
         res.render('rappers/show.ejs', {
             rappers: foundRapper
     })
+    })
+})
+
+router.delete('/:id', (req, res) => {
+    console.log(req.params.id)
+    Rapper.findByIdAndDelete(req.params.id, (err, deletedRapper) => {
+        if(err){
+            console.log(err)
+        } else{
+            console.log(deletedRapper, '<-- deleted rapper')
+            res.redirect('/rappers')
+        }
     })
 })
 
